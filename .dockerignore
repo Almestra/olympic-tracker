@@ -1,0 +1,31 @@
+# Keep the build context small and free of local artefacts.
+# Patterns are relative to the context root (unlike .gitignore):
+# use **/ to match at any depth.
+
+# Dependencies and build outputs: recreated inside the image
+node_modules
+dist
+.angular
+coverage
+reports
+test-results
+
+# Secrets: environment files must never end up in an image
+**/.env*
+
+# VCS, editors and OS files
+.git
+.vscode
+.idea
+**/.DS_Store
+**/Thumbs.db
+
+# Docker and deployment files: not needed to build the application
+Dockerfile
+docker-compose.yml
+.dockerignore
+k8s
+values.tpl.yaml
+
+# Documentation
+*.md
